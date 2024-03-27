@@ -1,16 +1,27 @@
+import { join, dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { parse } from 'node:url';
 import { routes } from './routes/heroRoute.js';
 import { DEFAULT_HEADER } from './util/util.js';
+import { generateInstance } from './factories/heroFactory.js';
+
+const currentDir = dirname(fileURLToPath(import.meta.url));
+
+const filePath = join(currentDir, './../database', 'data.json');
+
+const heroService = generateInstance({
+  filePath,
+});
 
 const heroRoutes = routes({
-  heroService: {},
+  heroService
 });
 
 const allRoutes = {
   ...heroRoutes,
   // 404 routes
   default: (request, response) => {
-    response.writeHead(404, DEFAULT_HEADER); 
+    response.writeHead(404, DEFAULT_HEADER);
     response.write('NOT FOUND');
     response.end();
   },

@@ -5,7 +5,7 @@ database
 src-all sources code
   - entities - object mappings
   - factories - intancies generators
-  -repositories - data acess
+  - repositories - data acess
   - routes - endpoint mappings 
   - services - communication between the routes and repositories layer (business logic)
   - utilities - shared code
