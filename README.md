@@ -1,5 +1,6 @@
-# nodejs_application
+#  node-app-manager
 
+Node.js application for task management, structured to be lightweight and scalable. Provides a RESTful API for creating, reading, updating and deleting tasks, using good development practices to ensure a modular and efficient architecture.
 
 ## Features Checklist + Challenges
 
